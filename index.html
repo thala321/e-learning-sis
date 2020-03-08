@@ -1,73 +1,36 @@
 <link rel="stylesheet" href="style.css">
 
-<div class="wrapper">
-    <div class="city">
-      <svg class="svg1" width="10em" height="10em">
-        <circle cx="5em" cy="5em" r="2.5em" stroke="#e1e8f0" stroke-width="0.15em" fill="none"  style="opacity:0.5"/>
-      </svg>
-      <svg class="svg2" width="10em" height="10em">
-        <circle cx="5em" cy="5em" r="2.5em" stroke="#e1e8f0" stroke-width="0.04em" fill="none" style="opacity:0.5"/>
-      </svg>
-      <svg class="svg3" width="10em" height="10em">
-        <circle cx="5em" cy="5em" r="2.5em" stroke="#e1e8f0" stroke-width="0.05em" fill="none" style="opacity:0.5"/>
-      </svg>
-      <svg class="svg4" width="10em" height="10em">
-        <circle cx="5em" cy="5em" r="1.3em" fill="#e1e8f0" style="opacity:1"/>
-      </svg>
-    </div><!--beauty-->
-    <h1>Huyen's Page</h1>
-    <div class="clickstate1" id="clickMe1"></div>
-    <div class="clickstate2" id="clickMe2">
-      <div class="colorbar1"></div>
-      <div class="colorbar2"></div>
-      <div class="colorbar3"></div>
-    </div><!--click-->
-  </div><!--wrapper-->
-  
-  <!--
-  This project uses a jquery script to resize the screen.
-  -->
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  
-  <!--
-  Resize screen - Jquery
-  -->
-  <script>
-      (function($) {
-        $.fn.resizeScreen = function(options) {
-              var settings = $.extend({
-              maximum   : 9999,
-            minimum   : 1,
-            maxFont   : 9999,
-            minFont   : 1,
-            fontRatio : 100
-          }, options),
-  
-              changes = function(el) {
-              var $el = $(el),
-            elw = $el.width(),
-            width = elw > settings.maximum ? settings.maximum : elw < settings.minimum ? settings.minimum : elw,
-            fontBase = width / settings.fontRatio,
-            fontSize = fontBase > settings.maxFont ? settings.maxFont : fontBase < settings.minFont ? settings.minFont : fontBase;
-               $el.css('font-size', fontSize + 'px');
-          };
-  
-          return this.each(function() {
-              var that = this;
-            $(window).resize(function(){changes(that);});
-            changes(this);
-          });
-        };
-      }(jQuery));
-  </script>
-  
-  <!--
-  Calling the jquery resize script.
-  -->
-  <script type="text/javascript">
-      $('body').resizeScreen();
-  </script>
-  
-  <script src="script.js"> </script>
-  
+<header class="header">
+    <div>
+        <p class="header-intro">Hi, I'm</p>
+        <h1 class="header-name">Bich Huyen</h1>
+    </div>
+</header>
+
+<section class="about">
+    <h2>Introduction</h2>
+    <p>Hi, I'm a freelance Designer who's currently learning to code on <a href="http://www.thinkful.com/" target="_blank">Thinkful</a>. I really want to learn how to implement my own designs in the browser and offer a better service to my clients by telling them that I can code too!</p>
+    
+    <p>I spend far too much time on the web, keeping one eye on Twitter and the other on <a href="http://www.allblacks.com/">Product Hunt</a> to ensure I dont miss out on any new products! As well as web design, I have a real desire to learn iOS development as well, but all in good time.</p>
+</section>
+
+<section class="questions">
+    <h2>More about me</h2>
+    <h3>Where am I from?</h3>
+    <p>I'm originally from a small country called New Zealand where we all have pet sheep and watch <a href="http://www.allblacks.com/" target="_blank">Rugby</a> every day of the week. I grew up in a small town but moved over to the UK a few years ago and I'm now living in the countryside in Ireland.</p>
+
+    <h3>What is my Dream Job?</h3>
+    <p>Part of the reason I'm learning to code is because I want to be able to put my own ideas into practice. My dream 'job' would be to build my own product and be responsbible for the entire experience from design through to implementation. </p>
+
+    <h3>What music have you been listening to?</h3>
+    <p>I only just recently discovered an awesome website called <a href="http://hypem.com" target="_blank">Hype Machine</a> which watches popular music blogs and discovers new artists and lets you stream all the music completely free. I've been really implressed with their breadth and can just hit play and forget about it.</p>
+</section>
+
+<footer class="footer">
+    <p>You can find out a bit more about me in these places</p>
+    <ul class="social">
+        <li><a href="https://twitter.com/HamishAIrving" target="=_blank">Twitter</li>
+        <li><a href="https://github.com/hamishirving" target="_blank">Github</li>
+        <li><a href="#" target="_blank">Facebook</li>
+    </ul>
+</footer>

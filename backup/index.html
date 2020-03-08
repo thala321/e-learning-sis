@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="style.css">
+
+<div class="wrapper">
+    <div class="city">
+      <svg class="svg1" width="10em" height="10em">
+        <circle cx="5em" cy="5em" r="2.5em" stroke="#e1e8f0" stroke-width="0.15em" fill="none"  style="opacity:0.5"/>
+      </svg>
+      <svg class="svg2" width="10em" height="10em">
+        <circle cx="5em" cy="5em" r="2.5em" stroke="#e1e8f0" stroke-width="0.04em" fill="none" style="opacity:0.5"/>
+      </svg>
+      <svg class="svg3" width="10em" height="10em">
+        <circle cx="5em" cy="5em" r="2.5em" stroke="#e1e8f0" stroke-width="0.05em" fill="none" style="opacity:0.5"/>
+      </svg>
+      <svg class="svg4" width="10em" height="10em">
+        <circle cx="5em" cy="5em" r="1.3em" fill="#e1e8f0" style="opacity:1"/>
+      </svg>
+    </div><!--beauty-->
+    <h1>Huyen's Page</h1>
+    <div class="clickstate1" id="clickMe1"></div>
+    <div class="clickstate2" id="clickMe2">
+      <div class="colorbar1"></div>
+      <div class="colorbar2"></div>
+      <div class="colorbar3"></div>
+    </div><!--click-->
+  </div><!--wrapper-->
+  
+  <!--
+  This project uses a jquery script to resize the screen.
+  -->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  
+  <!--
+  Resize screen - Jquery
+  -->
+  <script>
+      (function($) {
+        $.fn.resizeScreen = function(options) {
+              var settings = $.extend({
+              maximum   : 9999,
+            minimum   : 1,
+            maxFont   : 9999,
+            minFont   : 1,
+            fontRatio : 100
+          }, options),
+  
+              changes = function(el) {
+              var $el = $(el),
+            elw = $el.width(),
+            width = elw > settings.maximum ? settings.maximum : elw < settings.minimum ? settings.minimum : elw,
+            fontBase = width / settings.fontRatio,
+            fontSize = fontBase > settings.maxFont ? settings.maxFont : fontBase < settings.minFont ? settings.minFont : fontBase;
+               $el.css('font-size', fontSize + 'px');
+          };
+  
+          return this.each(function() {
+              var that = this;
+            $(window).resize(function(){changes(that);});
+            changes(this);
+          });
+        };
+      }(jQuery));
+  </script>
+  
+  <!--
+  Calling the jquery resize script.
+  -->
+  <script type="text/javascript">
+      $('body').resizeScreen();
+  </script>
+  
+  <script src="script.js"> </script>
+  
